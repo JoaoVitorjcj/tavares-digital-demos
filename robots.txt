@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://joaovitorjcj.github.io/tavares-digital-demos/sitemap.xml
