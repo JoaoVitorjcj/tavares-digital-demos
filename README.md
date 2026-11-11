@@ -7,7 +7,7 @@ Este repositório é público. Não coloque aqui dados reais de clientes, segred
 ## Estrutura
 - `index.html`, `td-style.css`, `td-app.js`: página institucional (HTML/CSS/JS estático, sem build).
 - `privacidade.html`: política de privacidade.
-- `ilustrado/`, `original/`, `claude/`: modelos AutoPrime (oficina fictícia).
+- `ilustrado/`, `original/`, `claude/`: modelos AutoPrime (oficina fictícia). `salao/`: modelo Casa Aurora Studio (salão fictício).
 - `assets/`: capturas do portfólio, favicon e imagem de compartilhamento (`td-social.png`, 1200x630).
 - `sitemap.xml`, `robots.txt`.
 

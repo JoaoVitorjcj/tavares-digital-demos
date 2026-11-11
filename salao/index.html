@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Casa Aurora Studio | Salão de Beleza — Demonstração</title>
+<meta name="description" content="Modelo de site para salão de beleza: serviços, horários, localização e pedido de agendamento pelo WhatsApp. Demonstração da Tavares Digital com empresa fictícia.">
+<meta name="theme-color" content="#3b1f33">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%233b1f33'/%3E%3Cpath d='M32 14c9 8 12 16 0 36C20 30 23 22 32 14z' fill='%23d9a86c'/%3E%3C/svg%3E">
+<style>
+:root{--plum:#3b1f33;--plum-2:#5a3050;--rose:#f6e4e0;--rose-2:#ecc9c3;--cream:#fffaf6;--gold:#855517;--gold-soft:#d9a86c;--ink:#2a1a26;--muted:#6b5662;--line:#e6d3cf;--serif:Georgia,'Times New Roman',serif;--sans:system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-text-size-adjust:100%}
+a{color:inherit}img,svg{max-width:100%}
+.wrap{width:min(1120px,calc(100% - 32px));margin:auto}
+.skip{position:absolute;left:-999px;top:8px;background:#fff;color:var(--ink);padding:8px 12px;border-radius:8px;z-index:100}.skip:focus{left:8px}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
+.demo{background:var(--plum);color:#f6e4e0;text-align:center;padding:8px 16px;font-size:13px}
+.demo strong{color:#fff}
+header{position:sticky;top:0;z-index:30;background:rgba(255,250,246,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:70px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--serif);font-size:21px;color:var(--plum)}
+.logo svg{width:34px;height:34px}.logo small{display:block;font:600 10px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;align-items:center}
+nav a{text-decoration:none;font-size:15px;color:var(--ink)}nav a:hover{color:var(--gold)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1.5px solid var(--plum);background:var(--plum);color:#fff;padding:13px 22px;border-radius:999px;font:600 15px var(--sans);text-decoration:none;cursor:pointer;min-height:46px;transition:background .2s,color .2s}
+.btn:hover{background:var(--plum-2)}.btn.ghost{background:transparent;color:var(--plum)}.btn.ghost:hover{background:var(--rose)}
+.menu{display:none;background:none;border:1.5px solid var(--line);border-radius:12px;width:46px;height:46px;cursor:pointer;color:var(--plum)}
+.hero{background:linear-gradient(160deg,var(--rose) 0%,var(--cream) 70%);padding:64px 0 72px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.eyebrow{font:600 12px var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:0 0 14px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;color:var(--plum);line-height:1.1;margin:0}
+h1{font-size:clamp(38px,6vw,68px);letter-spacing:-.02em}h1 em{color:var(--gold);font-style:italic}
+.lead{font-size:18px;color:var(--muted);max-width:520px;margin:22px 0 30px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.hours-chip{margin-top:30px;display:inline-flex;gap:10px;align-items:center;font-size:14px;color:var(--muted);border-top:1px solid var(--line);padding-top:18px}
+.art{aspect-ratio:4/5;border-radius:200px 200px 24px 24px;background:radial-gradient(circle at 30% 20%,#fff 0,var(--rose-2) 40%,#c98f8a 100%);position:relative;overflow:hidden;box-shadow:0 30px 60px -30px rgba(59,31,51,.5)}
+.art svg{position:absolute;inset:0;width:100%;height:100%}
+.tag{position:absolute;left:16px;bottom:16px;right:16px;background:rgba(255,250,246,.92);border-radius:16px;padding:14px 16px;font-size:14px}.tag strong{display:block;font-family:var(--serif);font-size:18px;color:var(--plum);font-weight:400}
+section{padding:80px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+h2{font-size:clamp(30px,4.4vw,46px)}.head p{max-width:440px;color:var(--muted);margin:0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px;display:flex;flex-direction:column;gap:12px}
+.card .ic{width:46px;height:46px;border-radius:50%;background:var(--rose);display:grid;place-items:center;color:var(--plum)}
+.card h3{font-size:24px}.card p{margin:0;color:var(--muted);font-size:15px}
+.card ul{list-style:none;margin:6px 0 0;padding:0;border-top:1px solid var(--line)}
+.card li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px dashed var(--line);font-size:15px}
+.card li span:last-child{color:var(--gold);font-weight:600;white-space:nowrap}
+.note{font-size:13px;color:var(--muted);margin-top:18px}
+.dark{background:var(--plum);color:#f3dfdb}.dark h2,.dark h3{color:#fff}.dark .eyebrow{color:var(--gold-soft)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s;list-style:none;margin:0;padding:0}
+.steps li{counter-increment:s;border-top:1px solid #7a4f6c;padding-top:18px}
+.steps li::before{content:"0" counter(s);font:italic 26px var(--serif);color:var(--gold-soft)}
+.steps h3{font-size:21px;margin:8px 0 6px}.steps p{margin:0;font-size:15px;color:#e0c7c4}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.info dl{margin:0;display:grid;gap:0}
+.info div{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.info dt{color:var(--muted)}.info dd{margin:0;font-weight:600;text-align:right}
+.map{margin-top:22px;border-radius:20px;background:linear-gradient(135deg,var(--rose),#fff);border:1px solid var(--line);padding:22px;font-size:15px;color:var(--muted)}
+form{background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px;display:grid;gap:16px}
+label{display:grid;gap:6px;font-size:14px;font-weight:600;color:var(--plum)}
+input,select,textarea{font:16px var(--sans);padding:12px 14px;border:1.5px solid #cdb3ae;border-radius:12px;background:var(--cream);color:var(--ink);width:100%}
+input:focus,select:focus,textarea:focus{outline:3px solid var(--gold);outline-offset:1px;border-color:var(--gold)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.preview{white-space:pre-line;background:var(--rose);border-radius:14px;padding:14px 16px;font-size:14px;color:var(--plum);min-height:3em}
+.small{font-size:13px;color:var(--muted);margin:0}
+footer{background:#2a1424;color:#e9d4d0;padding:36px 0 90px;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}footer a{color:#fff}
+.sticky{display:none}
+@media(max-width:860px){
+ .hero .wrap,.split{grid-template-columns:1fr}.art{max-width:420px;margin:auto;width:100%}
+ .cards{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}
+ .menu{display:grid;place-items:center}
+ nav{position:absolute;left:0;right:0;top:100%;background:var(--cream);border-bottom:1px solid var(--line);display:none}
+ nav.open{display:block}nav ul{flex-direction:column;align-items:stretch;gap:0;padding:8px 16px 16px}nav li a{display:block;padding:14px 4px;border-bottom:1px solid var(--line)}
+ nav .btn{display:none}
+ section{padding:56px 0}.row{grid-template-columns:1fr}
+ .sticky{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:40;justify-content:center;box-shadow:0 10px 30px rgba(59,31,51,.35)}
+}
+@media(max-width:480px){.steps{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">Ir para o conteúdo</a>
+<div class="demo"><strong>Modelo de demonstração</strong> · Casa Aurora Studio é uma empresa fictícia. Serviços, valores, endereço e contatos são ilustrativos.</div>
+<header>
+ <div class="wrap nav">
+  <a class="logo" href="#inicio" aria-label="Casa Aurora Studio, início">
+   <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#3b1f33"/><path d="M32 12c10 9 13 18 0 40C19 30 22 21 32 12z" fill="#d9a86c"/></svg>
+   <span>Casa Aurora<small>Studio de beleza</small></span>
+  </a>
+  <button class="menu" id="menu" aria-expanded="false" aria-controls="nav" aria-label="Abrir navegação"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  <nav id="nav" aria-label="Principal">
+   <ul>
+    <li><a href="#servicos">Serviços</a></li><li><a href="#cuidado">Como atendemos</a></li><li><a href="#visita">Horários e local</a></li>
+    <li><a class="btn" href="#agendar">Agendar</a></li>
+   </ul>
+  </nav>
+ </div>
+</header>
+<main id="conteudo">
+<div class="hero" id="inicio">
+ <div class="wrap">
+  <div>
+   <p class="eyebrow">Salão de beleza · Manaus, AM</p>
+   <h1>Cuidado com você, <em>do jeito que você pede.</em></h1>
+   <p class="lead">Cabelo, unhas e sobrancelhas em um ambiente tranquilo. Conte o que deseja, escolha um horário e confirme com a nossa equipe pelo WhatsApp.</p>
+   <div class="actions"><a class="btn" href="#agendar">Pedir um horário</a><a class="btn ghost" href="#servicos">Ver serviços</a></div>
+   <p class="hours-chip"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Terça a sábado, 9h às 19h (horário de Manaus)</p>
+  </div>
+  <div class="art" role="img" aria-label="Ilustração abstrata em tons de rosé com formas de folhas">
+   <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="#3b1f33" stroke-opacity=".35" stroke-width="2"><path d="M200 60c60 60 80 130 0 280C120 190 140 120 200 60z"/><path d="M200 340V450"/><path d="M120 250c40-10 60 10 80 40M280 220c-40-10-60 10-80 50"/></g><circle cx="300" cy="110" r="46" fill="#d9a86c" fill-opacity=".55"/><circle cx="90" cy="300" r="30" fill="#fff" fill-opacity=".5"/></svg>
+   <div class="tag"><strong>Atendimento com hora marcada</strong>Sem pressa e sem fila de espera.</div>
+  </div>
+ </div>
+</div>
+
+<section id="servicos"><div class="wrap">
+ <div class="head"><div><p class="eyebrow">Serviços</p><h2>O que fazemos aqui</h2></div><p>Valores de exemplo para o modelo. No site de uma empresa real, a lista e os preços são os dela.</p></div>
+ <div class="cards">
+  <article class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M7 3v8a5 5 0 0 0 10 0V3M12 16v5"/></svg></div><h3>Cabelo</h3><p>Corte, coloração e tratamentos com avaliação antes de começar.</p>
+   <ul><li><span>Corte</span><span>R$ 70</span></li><li><span>Escova</span><span>R$ 55</span></li><li><span>Coloração</span><span>R$ 150</span></li><li><span>Hidratação</span><span>R$ 90</span></li></ul></article>
+  <article class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M9 21V9a3 3 0 0 1 6 0v12M7 21h10"/></svg></div><h3>Unhas</h3><p>Manicure e pedicure com materiais esterilizados e esmaltação à escolha.</p>
+   <ul><li><span>Manicure</span><span>R$ 35</span></li><li><span>Pedicure</span><span>R$ 40</span></li><li><span>Esmaltação em gel</span><span>R$ 80</span></li><li><span>Mão + pé</span><span>R$ 70</span></li></ul></article>
+  <article class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 12c4-6 14-6 18 0M3 12c4 6 14 6 18 0"/><circle cx="12" cy="12" r="2.5"/></svg></div><h3>Sobrancelhas</h3><p>Design pensado para o formato do seu rosto, sem exageros.</p>
+   <ul><li><span>Design</span><span>R$ 40</span></li><li><span>Design com henna</span><span>R$ 55</span></li><li><span>Depilação facial</span><span>R$ 30</span></li><li><span>Retoque</span><span>R$ 25</span></li></ul></article>
+ </div>
+ <p class="note">Valores ilustrativos. Alguns serviços podem variar conforme o tamanho e o tipo do cabelo, avaliados no atendimento.</p>
+</div></section>
+
+<section class="dark" id="cuidado"><div class="wrap">
+ <div class="head"><div><p class="eyebrow">Como atendemos</p><h2>Do pedido ao horário confirmado</h2></div><p style="color:#e0c7c4">Um caminho simples, sem cadastro e sem aplicativo.</p></div>
+ <ol class="steps">
+  <li><h3>Você escolhe</h3><p>Seleciona o serviço e o dia que prefere no formulário.</p></li>
+  <li><h3>Enviamos a mensagem</h3><p>O site prepara o texto; você confere e envia pelo WhatsApp.</p></li>
+  <li><h3>Confirmamos</h3><p>A equipe verifica a agenda real e responde com o horário disponível.</p></li>
+  <li><h3>Você vem</h3><p>Hora marcada, com tempo reservado para o seu atendimento.</p></li>
+ </ol>
+</div></section>
+
+<section id="visita"><div class="wrap split">
+ <div class="info">
+  <p class="eyebrow">Horários e local</p><h2>Venha nos visitar</h2>
+  <dl style="margin-top:26px">
+   <div><dt>Terça a sexta</dt><dd>9h às 19h</dd></div>
+   <div><dt>Sábado</dt><dd>9h às 17h</dd></div>
+   <div><dt>Domingo e segunda</dt><dd>Fechado</dd></div>
+   <div><dt>Endereço</dt><dd>Rua Exemplo, 123 · Manaus, AM</dd></div>
+   <div><dt>WhatsApp</dt><dd>(92) 90000-0000</dd></div>
+  </dl>
+  <div class="map">Aqui entra o mapa com a localização real da empresa e orientações de chegada, como estacionamento e ponto de referência.</div>
+ </div>
+ <form id="agendar" aria-labelledby="f-t">
+  <div><p class="eyebrow">Pedido de horário</p><h2 id="f-t" style="font-size:30px">Conte o que você deseja</h2></div>
+  <label>Seu nome<input name="nome" required autocomplete="given-name" maxlength="60"></label>
+  <label>Serviço<select name="servico" required><option value="">Selecione</option><option>Corte</option><option>Escova</option><option>Coloração</option><option>Hidratação</option><option>Manicure / pedicure</option><option>Sobrancelhas</option><option>Outro / não sei</option></select></label>
+  <div class="row"><label>Dia preferido<select name="dia" required><option value="">Selecione</option><option>Terça</option><option>Quarta</option><option>Quinta</option><option>Sexta</option><option>Sábado</option></select></label>
+  <label>Período<select name="periodo" required><option value="">Selecione</option><option>Manhã</option><option>Tarde</option></select></label></div>
+  <label>Observações (opcional)<textarea name="obs" rows="3" maxlength="300"></textarea></label>
+  <div class="preview" id="prev" aria-live="polite">A mensagem aparece aqui para você conferir.</div>
+  <button class="btn" type="submit">Preparar mensagem</button>
+  <p class="small">Neste modelo, o botão só mostra a mensagem. No site real, ele abre o WhatsApp da empresa. A confirmação depende da agenda; nenhum horário é reservado automaticamente.</p>
+ </form>
+</div></section>
+</main>
+<footer><div class="wrap"><span>© <span id="y"></span> Casa Aurora Studio · empresa fictícia de demonstração</span><span>Modelo criado pela <a href="../">Tavares Digital</a></span></div></footer>
+<a class="btn sticky" href="#agendar">Pedir um horário</a>
+<script>
+'use strict';
+const m=document.getElementById('menu'),n=document.getElementById('nav');
+m.addEventListener('click',()=>{const o=n.classList.toggle('open');m.setAttribute('aria-expanded',String(o));m.setAttribute('aria-label',o?'Fechar navegação':'Abrir navegação')});
+n.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{n.classList.remove('open');m.setAttribute('aria-expanded','false')}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){n.classList.remove('open');m.setAttribute('aria-expanded','false')}});
+document.getElementById('y').textContent=new Date().getFullYear();
+const f=document.getElementById('agendar'),p=document.getElementById('prev');
+f.addEventListener('submit',e=>{e.preventDefault();if(!f.reportValidity())return;const d=Object.fromEntries(new FormData(f));
+ p.textContent=['Olá, Casa Aurora! Gostaria de pedir um horário.','Nome: '+d.nome.trim(),'Serviço: '+d.servico,'Preferência: '+d.dia+', '+d.periodo.toLowerCase(),'Observações: '+(d.obs.trim()||'nenhuma')].join('\n');});
+</script>
+</body>
+</html>
