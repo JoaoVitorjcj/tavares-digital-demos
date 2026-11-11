@@ -6,3 +6,8 @@
 .hero-browser>img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain;object-position:center}
 @media(max-width:1120px){.hero-browser{width:88%;left:6%;top:130px}}
 @media(max-width:900px){.hero-browser{width:88%;left:6%;top:130px}}
+
+/* Vitrine Tavares Engenharia: renderização estática da página oficial, sem recorte. */
+.hero-live-frame{position:relative;width:100%;aspect-ratio:1.77;overflow:hidden;background:#fff}
+.hero-live-frame iframe{display:block;position:absolute;top:0;left:0;width:250%;height:250%;border:0;transform:scale(.4);transform-origin:top left;pointer-events:none;background:#fff}
+@media(max-width:900px){.hero-live-frame iframe{width:333.333%;height:333.333%;transform:scale(.3)}}
