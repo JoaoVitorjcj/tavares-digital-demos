@@ -31,3 +31,20 @@ form.addEventListener('submit',event=>{event.preventDefault();if(!form.reportVal
 const sticky=document.querySelector('.sticky-mobile-contact');
 if('IntersectionObserver' in window){let inHero=true,inContact=false;const update=()=>sticky.classList.toggle('visible',!inHero&&!inContact);const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.target.id==='inicio')inHero=entry.isIntersecting;if(entry.target.id==='contato')inContact=entry.isIntersecting;});update();},{threshold:0});observer.observe(document.getElementById('inicio'));observer.observe(document.getElementById('contato'));}
 document.getElementById('year').textContent=new Date().getFullYear();
+
+/* Mantém a captura desktop inteira e proporcional em qualquer tela. */
+const engineeringHeroFrame=document.querySelector('.hero-live-frame');
+if(engineeringHeroFrame){
+ const preview=engineeringHeroFrame.querySelector('iframe');
+ const fitEngineeringPreview=()=>{
+  const baseWidth=1713,baseHeight=755;
+  const scale=engineeringHeroFrame.clientWidth/baseWidth;
+  if(!scale)return;
+  preview.style.width=baseWidth+'px';
+  preview.style.height=baseHeight+'px';
+  preview.style.transform='scale('+scale+')';
+ };
+ fitEngineeringPreview();
+ if('ResizeObserver' in window)new ResizeObserver(fitEngineeringPreview).observe(engineeringHeroFrame);
+ else window.addEventListener('resize',fitEngineeringPreview,{passive:true});
+}
