@@ -34,3 +34,20 @@
 
 /* Prévia de preços visível na página inicial */
 .pricing-teaser{background:#e8eff5;padding:86px 0;border-block:1px solid var(--line)}.pricing-teaser .section-head{margin-bottom:30px}.pricing-teaser-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.pricing-teaser-card{background:#fff;border:1px solid #d8e1e9;border-radius:12px;padding:28px 24px}.pricing-teaser-card>span{font-size:10px;font-weight:700;letter-spacing:1.4px;color:#47799b}.pricing-teaser-card h3{font-size:clamp(30px,3vw,44px);letter-spacing:-1.4px;color:#153b59;margin:14px 0 10px}.pricing-teaser-card h3 small{font-size:12px;letter-spacing:0;color:#65788a;font-weight:500}.pricing-teaser-card p{font-size:13px;color:#65788a;line-height:1.7;margin:0}.pricing-teaser-bottom{display:flex;justify-content:space-between;align-items:center;gap:25px;flex-wrap:wrap;margin-top:25px}.pricing-teaser-bottom p{font-size:13px;color:#526a7e;max-width:650px;margin:0}.pricing-teaser-bottom strong{color:#153b59}.pricing-teaser-bottom .button{white-space:normal;text-align:center}@media(max-width:760px){.pricing-teaser{padding:56px 0}.pricing-teaser-grid{grid-template-columns:1fr}.pricing-teaser-card{padding:22px}.pricing-teaser-bottom{align-items:stretch;flex-direction:column}.pricing-teaser-bottom .button{justify-content:center}}
+
+/* 2026-11-11: navegação mobile contida e cartões azuis também na home */
+.pricing-teaser-card{background:linear-gradient(155deg,#0d517b,#07375c 48%,#061d38);border:2px solid #39baff;border-radius:18px;box-shadow:0 14px 28px #063a5a20;color:#fff;transition:transform .2s,box-shadow .2s,background .2s}
+.pricing-teaser-card:hover,.pricing-teaser-card:focus-within{transform:translateY(-5px);background:linear-gradient(155deg,#1474a4,#09517d 48%,#072949);box-shadow:0 22px 36px #063a5a44}
+.pricing-teaser-card>span{color:#79dcff}
+.pricing-teaser-card h3,.pricing-teaser-card p{color:#fff}
+.pricing-teaser-card h3 small{color:#ccefff}
+@media(max-width:900px){
+ .site-header .nav{height:76px;min-height:76px;flex-wrap:nowrap;gap:10px}
+ .site-header #main-nav{display:none;position:absolute;top:calc(100% + 5px);left:5%;right:5%;width:auto;max-height:min(65vh,360px);overflow-y:auto;background:#fff;border:1px solid #d8e1e9;border-radius:12px;padding:8px;box-shadow:0 15px 35px #102b4325;flex-direction:column;align-items:stretch;gap:0}
+ .site-header #main-nav.open{display:flex}
+ .site-header #main-nav a{padding:11px 14px;font-size:14px;border-bottom:0;border-radius:7px}
+ .site-header #main-nav a:hover,.site-header #main-nav a:focus-visible{background:#eaf5fc}
+ .site-header .menu-toggle{flex:0 0 43px;height:43px;width:43px}
+}
+@media(max-width:650px){.pricing-teaser-card{padding:25px 22px}.pricing-teaser-card h3{color:#fff}}
+@media(prefers-reduced-motion:reduce){.pricing-teaser-card{transition:none}.pricing-teaser-card:hover{transform:none}}
