@@ -4,7 +4,7 @@ const projects={
  original:{index:'02 — 03',title:'AutoPrime — Original',overline:'DIRETO AO PONTO',heading:'O que importa.<br>Sem dar voltas.',description:'Uma apresentação objetiva, com serviços, informações da empresa e um caminho para pedir orçamento. Para quem prefere uma página enxuta.',tags:['Página enxuta','Contato em destaque','Layout responsivo'],path:'original/',image:'assets/demo-original.png',alt:'Modelo AutoPrime Original: página com fotografia na abertura e serviços organizados'},
  claude:{index:'03 — 03',title:'AutoPrime — Essencial',overline:'LIMPO E ORGANIZADO',heading:'Mais espaço.<br>Mais clareza.',description:'O modelo Claude, aqui apresentado como Essencial: visual limpo, cartões de serviços e informações bem distribuídas para uma leitura tranquila.',tags:['Cartões de serviços','Leitura organizada','Layout responsivo'],path:'claude/',image:'assets/demo-claude.png',alt:'Modelo AutoPrime Essencial: abertura escura, cartões claros e navegação organizada'}
 };
-const origin='https://joaovitorjcj.github.io/tavares-digital-demos/';
+const origin=new URL('./',window.location.href).href;
 const tabs=[...document.querySelectorAll('[data-project]')];
 function showProject(id,focus=false){
  const p=projects[id];if(!p)return;
