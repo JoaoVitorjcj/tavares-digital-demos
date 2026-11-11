@@ -1,8 +1,16 @@
 'use strict';
+/* COMO ADICIONAR UM PROJETO AO PORTFÓLIO (ex.: o demo do salão de beleza)
+   1) Coloque a captura em assets/ (1264x714) e a demo numa pasta deste repositório (ex.: salao/index.html);
+   2) crie uma entrada em `projects` abaixo: use `path` para páginas deste repositório ou `url` para sites externos;
+   3) em index.html adicione um <button class="project-tab" data-project="..."> junto das outras abas e
+      atualize o total no campo `index` (ex.: '05 — 05') e no HTML (#project-index);
+   4) inclua a nova URL no sitemap.xml se a demo for pública e indexável. */
+const DEMO_NOTE='Os modelos são exemplos de apresentação, não sites de clientes contratantes. Contatos e serviços são ilustrativos.';
 const projects={
- ilustrado:{index:'01 — 03',title:'AutoPrime — Ilustrado',overline:'VISUAL E EXPRESSIVO',heading:'Um visual que<br>puxa a conversa.',description:'Imagens, cartões de serviços e uma navegação que convida a conhecer a empresa. Uma opção para quem quer uma apresentação mais visual.',tags:['Serviços em destaque','Formulário','Layout responsivo'],path:'ilustrado/',image:'assets/demo-ilustrado.png',alt:'Modelo AutoPrime Ilustrado: apresentação visual com imagem, serviços e navegação'},
- original:{index:'02 — 03',title:'AutoPrime — Original',overline:'DIRETO AO PONTO',heading:'O que importa.<br>Sem dar voltas.',description:'Uma apresentação objetiva, com serviços, informações da empresa e um caminho para pedir orçamento. Para quem prefere uma página enxuta.',tags:['Página enxuta','Contato em destaque','Layout responsivo'],path:'original/',image:'assets/demo-original.png',alt:'Modelo AutoPrime Original: página com fotografia na abertura e serviços organizados'},
- claude:{index:'03 — 03',title:'AutoPrime — Essencial',overline:'LIMPO E ORGANIZADO',heading:'Mais espaço.<br>Mais clareza.',description:'O modelo Claude, aqui apresentado como Essencial: visual limpo, cartões de serviços e informações bem distribuídas para uma leitura tranquila.',tags:['Cartões de serviços','Leitura organizada','Layout responsivo'],path:'claude/',image:'assets/demo-claude.png',alt:'Modelo AutoPrime Essencial: abertura escura, cartões claros e navegação organizada'}
+ ilustrado:{index:'01 — 04',kind:'CONCEITO / OFICINA MECÂNICA',meta:'Modelo demonstrativo · Empresa fictícia',note:DEMO_NOTE,cta:'Abrir demonstração',title:'AutoPrime — Ilustrado',overline:'VISUAL E EXPRESSIVO',heading:'Um visual que<br>puxa a conversa.',description:'Imagens, cartões de serviços e uma navegação que convida a conhecer a empresa. Uma opção para quem quer uma apresentação mais visual.',tags:['Serviços em destaque','Formulário','Layout responsivo'],path:'ilustrado/',image:'assets/demo-ilustrado.png',alt:'Modelo AutoPrime Ilustrado: apresentação visual com imagem, serviços e navegação'},
+ original:{index:'02 — 04',kind:'CONCEITO / OFICINA MECÂNICA',meta:'Modelo demonstrativo · Empresa fictícia',note:DEMO_NOTE,cta:'Abrir demonstração',title:'AutoPrime — Original',overline:'DIRETO AO PONTO',heading:'O que importa.<br>Sem dar voltas.',description:'Uma apresentação objetiva, com serviços, informações da empresa e um caminho para pedir orçamento. Para quem prefere uma página enxuta.',tags:['Página enxuta','Contato em destaque','Layout responsivo'],path:'original/',image:'assets/demo-original.png',alt:'Modelo AutoPrime Original: página com fotografia na abertura e serviços organizados'},
+ claude:{index:'03 — 04',kind:'CONCEITO / OFICINA MECÂNICA',meta:'Modelo demonstrativo · Empresa fictícia',note:DEMO_NOTE,cta:'Abrir demonstração',title:'AutoPrime — Essencial',overline:'LIMPO E ORGANIZADO',heading:'Mais espaço.<br>Mais clareza.',description:'O modelo Claude, aqui apresentado como Essencial: visual limpo, cartões de serviços e informações bem distribuídas para uma leitura tranquila.',tags:['Cartões de serviços','Leitura organizada','Layout responsivo'],path:'claude/',image:'assets/demo-claude.png',alt:'Modelo AutoPrime Essencial: abertura escura, cartões claros e navegação organizada'},
+ engenharia:{index:'04 — 04',kind:'SITE REAL / PMOC EM MANAUS',meta:'Site publicado · Projeto próprio',note:'A Tavares Engenharia é um projeto próprio, não um cliente contratante. O site está publicado e pode ser visitado.',cta:'Visitar site publicado',title:'Tavares Engenharia — Site real',overline:'NO AR, DE VERDADE',heading:'Informação técnica,<br>em linguagem clara.',description:'Site publicado da Tavares Engenharia, empresa de PMOC e manutenção preventiva de ar-condicionado. Explica o serviço e a legislação e leva ao contato direto por WhatsApp ou e-mail.',tags:['Site publicado','Conteúdo técnico','WhatsApp e e-mail'],url:'https://tavares-engenharia.pages.dev/',image:'assets/case-engenharia.png',alt:'Site publicado da Tavares Engenharia: título sobre PMOC e manutenção preventiva em Manaus e ilustração de aparelhos de ar-condicionado'}
 };
 const origin='https://joaovitorjcj.github.io/tavares-digital-demos/';
 const tabs=[...document.querySelectorAll('[data-project]')];
@@ -10,11 +18,12 @@ function showProject(id,focus=false){
  const p=projects[id];if(!p)return;
  tabs.forEach(tab=>{const active=tab.dataset.project===id;tab.classList.toggle('active',active);tab.setAttribute('aria-selected',String(active));tab.tabIndex=active?0:-1;if(active&&focus)tab.focus();});
  const set=(id,value)=>document.getElementById(id).textContent=value;
- set('project-index',p.index);set('project-title',p.title);set('project-overline',p.overline);set('project-description',p.description);
+ set('project-index',p.index);set('project-kind',p.kind);set('project-meta',p.meta);set('demo-note',p.note);set('project-title',p.title);set('project-overline',p.overline);set('project-description',p.description);
  document.getElementById('project-heading').replaceChildren(...p.heading.split('<br>').flatMap((text,i)=>i?[document.createElement('br'),document.createTextNode(text)]:[document.createTextNode(text)]));
  const image=document.getElementById('project-image');image.src=p.image;image.alt=p.alt;
- const imageLink=document.getElementById('project-image-link');imageLink.href=origin+p.path;imageLink.setAttribute('aria-label','Abrir demonstração '+p.title);
- document.getElementById('project-demo-link').href=origin+p.path;
+ const target=p.url||origin+p.path;
+ const imageLink=document.getElementById('project-image-link');imageLink.href=target;imageLink.setAttribute('aria-label',p.cta+': '+p.title);
+ const demoLink=document.getElementById('project-demo-link');demoLink.href=target;demoLink.firstChild.nodeValue=p.cta+' ';
  document.getElementById('project-tags').replaceChildren(...p.tags.map(text=>{const tag=document.createElement('span');tag.textContent=text;return tag;}));
  document.getElementById('project-details').setAttribute('aria-labelledby','tab-'+id);
 }
