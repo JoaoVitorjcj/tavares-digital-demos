@@ -7,7 +7,10 @@
 @media(max-width:1120px){.hero-browser{width:88%;left:6%;top:130px}}
 @media(max-width:900px){.hero-browser{width:88%;left:6%;top:130px}}
 
-/* Vitrine Tavares Engenharia: renderização estática da página oficial, sem recorte. */
-.hero-live-frame{position:relative;width:100%;aspect-ratio:1.77;overflow:hidden;background:#fff}
-.hero-live-frame iframe{display:block;position:absolute;top:0;left:0;width:250%;height:250%;border:0;transform:scale(.4);transform-origin:top left;pointer-events:none;background:#fff}
-@media(max-width:900px){.hero-live-frame iframe{width:333.333%;height:333.333%;transform:scale(.3)}}
+/* Vitrine: página oficial na proporção exata da captura desktop enviada.
+   A escala é calculada pelo JavaScript para impedir a versão mobile recortada. */
+.hero-browser{width:94%;left:3%;top:145px;transform:rotate(-1deg)}
+.hero-art:hover .hero-browser{transform:rotate(0deg)}
+.hero-live-frame{position:relative;width:100%;aspect-ratio:1713 / 755;overflow:hidden;background:#fff}
+.hero-live-frame iframe{display:block;position:absolute;top:0;left:0;width:1713px;height:755px;border:0;transform-origin:top left;pointer-events:none;background:#fff}
+@media(max-width:900px){.hero-browser{width:94%;left:3%;top:135px}}
