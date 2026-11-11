@@ -15,3 +15,6 @@ Comparação de referências e preservação do corpo das páginas antes do comm
 ## Google
 Próxima etapa: verificar propriedade de prefixo https://tavares-digital.pages.dev/ no Search Console, enviar sitemap.xml e solicitar indexação da home.
 Nenhum código de verificação foi inventado ou reaproveitado da Engenharia. Indexação e processamento pelo Google ainda não confirmados.
+
+## Retomada da publicação
+A implantação estava parada na versão f0b721a devido à falta de acesso do aplicativo Cloudflare ao repositório Digital. Após o usuário incluir o repositório na integração, este registro dispara uma nova implantação da main com as referências corrigidas. Confirmar o resultado em produção antes de solicitar indexação.
