@@ -21,3 +21,10 @@ Repositório público: não coloque aqui dados reais de clientes, segredos ou pr
 - Versão preservada em `versao/autoprime-premium`, sem alteração da versão publicada.
 - HTML/CSS/JS sem backend, galeria de quatro carros com navegação lateral, FAQ e pedido revisável para WhatsApp.
 - Empresa, avaliações e imagens demonstrativas. Detalhes em [documentação da versão](docs/versoes/autoprime-premium.md).
+
+## Salões: Alma e referência Manus
+
+- [Alma — Atelier de Beleza](alma-salao/index.html): demo interativa autoral, com catálogo, curadoria de rituais, montagem da visita e solicitação pelo WhatsApp.
+- [Salão demo feito pelo Manus](referencias-manus/): captura de tela fornecida pelo usuário. HTML original ainda não fornecido.
+- Branch preservada: `versao/salao-alma-e-referencia-manus`. Sem alteração da versão publicada.
+- O novo AutoPrime do Claude ainda não foi recebido.
