@@ -14,3 +14,10 @@ Repositório público: não coloque aqui dados reais de clientes, segredos ou pr
 - `ilustrado/`, `original/`, `claude/`: modelos AutoPrime (oficina fictícia). `salao/`: modelo Casa Aurora (salão fictício).
 - `assets/`: capturas do portfólio, favicon e imagem de compartilhamento; `assets/logo/`: logotipos; `assets/anteriores/`: arquivos de versões passadas.
 
+
+## AutoPrime Premium
+
+- Demo premium: [abrir arquivos](autoprime-premium/index.html).
+- Versão preservada em `versao/autoprime-premium`, sem alteração da versão publicada.
+- HTML/CSS/JS sem backend, galeria de quatro carros com navegação lateral, FAQ e pedido revisável para WhatsApp.
+- Empresa, avaliações e imagens demonstrativas. Detalhes em [documentação da versão](docs/versoes/autoprime-premium.md).

@@ -1,0 +1,48 @@
+AUTOPRIME PREMIUM — TAVARES DIGITAL
+
+PRÉVIA
+Abra index.html no navegador. Mantenha styles.css, app.js e assets na mesma pasta.
+O site funciona sem instalação, sem backend e sem bibliotecas externas.
+Use dados fictícios para experimentar o formulário.
+
+O QUE ESTÁ INCLUÍDO
+Layout responsivo, navegação mobile, seis serviços com seleção para o formulário,
+galeria com ampliação, avaliações explicitamente fictícias, FAQ, formulário com
+validação e revisão do pedido, mensagem para WhatsApp, alternativa para copiar,
+modal de privacidade, foco visível, redução de movimento e navegação por teclado.
+
+WHATSAPP
+Na demonstração, o botão abre o compartilhamento do WhatsApp sem destinatário
+fixo. Você escolhe o contato; nada é enviado automaticamente.
+Para adaptar a um cliente real, configure WHATSAPP_NUMBER no início de app.js
+com o número comercial autorizado: 55 + DDD + telefone, somente dígitos.
+Nesse modo o link usa wa.me com o destinatário e a mensagem preparados.
+O formulário solicita agendamento: a oficina precisa confirmar disponibilidade.
+Não há calendário de vagas, banco de dados ou confirmação automática.
+Datas usam o fuso local do dispositivo; permite hoje e os próximos 90 dias,
+de segunda a sábado. Adapte dias e períodos à operação da oficina real.
+
+PRIVACIDADE E SEGURANÇA
+Sem cookies, rastreadores, dependências externas ou dados persistidos.
+Conteúdo do usuário inserido com textContent e parâmetros de URL codificados.
+O envio ao WhatsApp só ocorre ao clicar no link de continuação.
+A política CSP limita recursos a arquivos locais e impede submissões de forms.
+Antes de hospedar, revisar cabeçalhos de segurança, HTTPS e a política real.
+
+SEO
+Título, descrição, idioma, viewport, favicon, Open Graph e hierarquia semântica.
+Noindex/nofollow é intencional: esta oficina não existe. Não foram inventados
+endereço, telefone, nota agregada ou dados estruturados de negócio real.
+Ao adaptar a um cliente: configurar domínio/canonical, OG com URL absoluta,
+imagem social, dados reais, sitemap e indexação após autorização.
+
+REFERÊNCIAS
+Inspecionados em leitura: original/index.html e claude/index.html do repositório
+https://github.com/JoaoVitorjcj/tavares-digital-demos
+Imagem reaproveitada do acervo demonstrativo do mesmo repositório:
+propostas/jr/carro.png. Galeria com quatro carros, setas laterais, indicadores e teclado. Três imagens novas geradas por IA; a foto original é do acervo.
+Imagem ilustrativa; verificar os direitos de uso antes de reutilizar em produção.
+Implementação nova; nenhum repositório ou site oficial foi alterado ou publicado.
+
+VALIDAÇÃO
+Consulte VALIDACAO.txt para os testes executados e o limite de verificação visual.

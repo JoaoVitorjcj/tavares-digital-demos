@@ -1,0 +1,3 @@
+Validação estática: IDs únicos, âncoras, recursos locais, um H1, noindex, sem eventos inline.
+JavaScript: sintaxe válida; URL de WhatsApp com e sem número configurado; codificação de caracteres; datas passadas e domingos rejeitados; data válida aceita; nome em branco rejeitado; revisão de pedido e conteúdo tratado como texto.
+Limite: testes de lógica executados com DOM simulado. Navegador não acessou localhost; responsividade e aparência não foram verificadas visualmente em navegador.
