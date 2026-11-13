@@ -24,7 +24,7 @@ Repositório público: não coloque aqui dados reais de clientes, segredos ou pr
 
 ## Salões: Alma e referência Manus
 
-- [Alma — Atelier de Beleza](alma-salao/index.html): demo interativa autoral, com catálogo, curadoria de rituais, montagem da visita e solicitação pelo WhatsApp.
+- [Salão — Demo Premium ChatGPT (Alma)](alma-salao/index.html): demo interativa autoral, com catálogo, curadoria de rituais, montagem da visita e solicitação pelo WhatsApp.
 - [Salão demo feito pelo Manus](referencias-manus/): captura de tela fornecida pelo usuário. HTML original ainda não fornecido.
 - Branch preservada: `versao/salao-alma-e-referencia-manus`. Sem alteração da versão publicada.
 - O novo AutoPrime do Claude ainda não foi recebido.
