@@ -4,11 +4,11 @@ Biblioteca **interna e experimental**, isolada na branch `library/td-motion-v1`.
 
 ## Arquivos
 - `td-motion.css`: tokens da marca, reveal, stagger, botões, cards e hover.
-- `td-motion.js`: IntersectionObserver, barra de leitura e inicializador idempotente por instância.
-- `demo.html`: demonstração local sem dependências externas.
+- `td-motion.js`: IntersectionObserver, barra de leitura e inicialização.
+- `demo.html`: demonstração local, sem bibliotecas externas ou compilação.
 
 ## Como usar
-Copie os arquivos para o projeto desejado e inclua:
+Copie os arquivos para um projeto e inclua:
 ```html
 <link rel="stylesheet" href="./td-motion.css">
 <div class="td-progress" aria-hidden="true"></div>
@@ -19,15 +19,15 @@ Copie os arquivos para o projeto desejado e inclua:
 </script>
 ```
 
-Para uma série de cards, use `class="td-stagger"` no pai e `class="td-reveal td-lift"` nos filhos. Evite esconder conteúdo essencial por longos períodos.
+Para uma série de cards, use `class="td-stagger"` no pai e `class="td-reveal td-lift"` nos filhos.
 
-## Segurança, acessibilidade e performance
-- Sem eval, innerHTML dinâmico, acesso a chaves ou coleta de dados.
-- Respeita `prefers-reduced-motion` e `:focus-visible`.
-- `IntersectionObserver` com fallback sem JS API.
-- Scroll listener passivo e atualização com requestAnimationFrame.
-- Sem frameworks/CDN: pode abrir offline pelo navegador.
-- Para recursos externos futuros (GSAP, Swiper, Three.js), consultar licenças e fixar versões; **não incluídos nesta V1**.
+**Execução local:** módulos ES precisam de servidor HTTP, mesmo sem backend. No diretório dos arquivos, execute `python -m http.server 8000` e abra `http://localhost:8000/demo.html`; abrir `file://` diretamente pode falhar devido à política de origem do navegador. Em hospedagem estática, os arquivos são servidos normalmente.
+
+## Segurança, acessibilidade e desempenho
+- Sem `eval`, `innerHTML` dinâmico, chaves ou coleta de dados.
+- Respeita `prefers-reduced-motion`, `:focus-visible` e mantém o conteúdo visível sem JavaScript.
+- `IntersectionObserver` com fallback; atualização da rolagem com `requestAnimationFrame` e listener passivo.
+- Sem frameworks/CDN. Para recursos futuros (GSAP, Swiper, Three.js), verificar licenças e fixar versões; **não incluídos nesta V1**.
 
 ## QA e limitações
-Revisar manualmente em 320 px, 390 px, 768 px e 1440 px, teclado, redução de movimento e leitores de tela antes de uso comercial. O reveal com JS desativado deve ser tratado com progressive enhancement no projeto consumidor (por exemplo, ativar classe de efeito somente após inicialização). Esta branch é biblioteca de código, não uma publicação de site.
+Revisar manualmente em 320 px, 390 px, 768 px e 1440 px, teclado, redução de movimento, leitores de tela e console antes de uso comercial. O JavaScript usa APIs modernas de navegador. Esta branch é biblioteca de código, não publicação de site.
