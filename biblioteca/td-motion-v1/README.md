@@ -29,5 +29,11 @@ Para uma série de cards, use `class="td-stagger"` no pai e `class="td-reveal td
 - `IntersectionObserver` com fallback; atualização da rolagem com `requestAnimationFrame` e listener passivo.
 - Sem frameworks/CDN. Para recursos futuros (GSAP, Swiper, Three.js), verificar licenças e fixar versões; **não incluídos nesta V1**.
 
+## Testes automatizados
+
+Execute `node td-motion.test.mjs` nesta pasta (Node.js 22+ recomendado). Há 10 verificações de tokens CSS, sintaxe JS, fallback sem JS e sem IntersectionObserver, redução de movimento, indicador de rolagem e limpeza de listeners. Os testes usam objetos simulados; **não substituem testes reais em navegador**.
+
 ## QA e limitações
+Auditoria Figma V1: 19 variáveis e 4 componentes com preenchimentos e textos vinculados; fontes Manrope / DM Sans e prévia visual revisadas. Contraste do texto muted sobre cream foi identificado como insuficiente para texto normal (aprox. 4,2:1), então adotamos ink nesses casos.
+
 Revisar manualmente em 320 px, 390 px, 768 px e 1440 px, teclado, redução de movimento, leitores de tela e console antes de uso comercial. O JavaScript usa APIs modernas de navegador. Esta branch é biblioteca de código, não publicação de site.
