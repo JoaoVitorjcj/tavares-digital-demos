@@ -9,3 +9,7 @@ Publicação autorizada pelo responsável após revisão da prévia privada no c
 - Verificação prévia em Chromium com a CSP vigente: 360, 390, 768, 1280 e 1440 px, navegação, volta à home, capturas, preços e destinos das demos. Sem erros JavaScript ou violações CSP na amostra. O teste de orçamento conferiu o destino e o assunto sem enviar mensagens.
 
 O GitHub publica a branch main pelo Cloudflare Pages. Em caso de regressão, restaurar por um commit de reversão da publicação e verificar o domínio canônico.
+
+## Destaque na página inicial
+
+A seção Projetos abre com o título Conheça nosso portfólio e um botão de acesso à página própria. O bloco em azul-escuro antecede a galeria existente e empilha título, texto e botão em telas estreitas. Validado em Chromium nas cinco larguras anteriores: título de aproximadamente 37 a 72 px, botão com altura mínima de 54 px, galeria e navegação funcionando.
